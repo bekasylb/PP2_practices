@@ -1,1 +1,133 @@
+x = 5
+print(x)
+
+y = 10
+print(y)
+
+sum = x + y
+print(sum)
+
+product = x * y
+print(product)
+
+name = "Alex"
+print(name)
+
+
+#names
+
+myvar = "Bekasyl"
+my_var = "Bekasyl"
+_my_var = "Bekasyl"
+myVar = "Bekasyl"
+MYVAR = "Bekasyl"
+myvar2 = "Bekasyl"
+
+#muptiplevalues
+
+colors = ["red", "green", "blue"]
+a, b, c = colors
+print(a)
+print(b)
+print(c)
+
+numbers = [1, 2, 3]
+num1, num2, num3 = numbers
+print(num1)
+print(num2)
+print(num3)
+
+animals = ["cat", "dog", "rabbit"]
+first, second, third = animals
+print(first)
+print(second)
+print(third)
+
+cars = ["Toyota", "BMW", "Tesla"]
+car1, car2, car3 = cars
+print(car1)
+print(car2)
+print(car3)
+
+cities = ["Paris", "London", "Tokyo"]
+city1, city2, city3 = cities
+print(city1)
+print(city2)
+print(city3)
+
+#output variables
+
+a = "I "
+b = "love "
+c = "coding"
+print(a + b + c)
+
+first = "Hello "
+second = "world"
+third = "!"
+print(first + second + third)
+
+name = "My "
+verb = "favorite "
+thing = "food"
+print(name + verb + thing)
+
+part1 = "Python "
+part2 = "is "
+part3 = "fun"
+print(part1 + part2 + part3)
+
+greeting = "Good "
+time = "morning "
+person = "everyone"
+print(greeting + time + person)
+
+#globalvariables
+
+x = "happy"
+
+def greet():
+    x = "excited"
+    print("I am " + x)
+
+greet()
+print("I am " + x)
+
+y = "bright"
+
+def shine():
+    y = "shining"
+    print("The sun is " + y)
+
+shine()
+print("The sun is " + y)
+
+color = "red"
+
+def change_color():
+    color = "blue"
+    print("The car is " + color)
+
+change_color()
+print("The car is " + color)
+
+mood = "calm"
+
+def change_mood():
+    mood = "energetic"
+    print("I feel " + mood)
+
+change_mood()
+print("I feel " + mood)
+
+status = "sleepy"
+
+def wake_up():
+    status = "awake"
+    print("I am " + status)
+
+wake_up()
+print("I am " + status)
+
+
 
