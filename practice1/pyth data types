@@ -1,1 +1,14 @@
+x = "yee"
+print(type(x)) 
 
+i = 2*2
+print(type(i))
+
+f = 0
+print(type(f))
+
+d = "snikers"
+print(type(d))
+
+l = 5**2
+print(type(l))
