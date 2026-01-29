@@ -12,3 +12,9 @@ if 4**2>15:
 
 if 99*99>1000:
     print("99*99 is greater than 1000")
+
+print("Hello, Python")
+print(5)
+print(10 + 20)
+print("I like programming")
+print(100 * 2)
