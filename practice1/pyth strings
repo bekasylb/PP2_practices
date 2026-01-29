@@ -1,1 +1,163 @@
+text1 = '''Python is fun,
+easy to learn,
+and very powerful.'''
+print(text1)
+
+text2 = '''I love coding,
+solving problems,
+and learning new things.'''
+print(text2)
+
+text3 = '''Artificial Intelligence,
+Machine Learning,
+and Data Science are exciting fields.'''
+print(text3)
+
+text4 = '''My favorite fruits are:
+apple, banana, cherry,
+and mango.'''
+print(text4)
+
+text5 = '''Today I will:
+study Python,
+practice exercises,
+and relax in the evening.'''
+print(text5)
+
+
+text1 = "Python Programming"
+print(text1[0:6])
+print(text1[7:18])
+
+text2 = "Data Science"
+print(text2[0:4])
+print(text2[5:12])
+
+text3 = "Artificial Intelligence"
+print(text3[0:10])
+print(text3[11:23])
+
+text4 = "Machine Learning"
+print(text4[0:7])
+print(text4[8:16])
+
+text5 = "OpenAI GPT-5"
+print(text5[0:6])
+print(text5[7:10])
+
+
+text1 = "   Python  "
+print(text1.strip())
+
+text2 = "  Data Science  "
+print(text2.strip())
+
+text3 = "   AI and ML   "
+print(text3.strip())
+
+text4 = "  OpenAI GPT  "
+print(text4.strip())
+
+text5 = "   Hello World!   "
+print(text5.strip())
+
+
+# Example 1
+x = "Python"
+y = "Programming"
+z = x + " " + y
+print(z)
+
+# Example 2
+first = "I"
+second = "love"
+third = first + " " + second
+print(third)
+
+# Example 3
+name = "OpenAI"
+tool = "GPT-5"
+full = name + " " + tool
+print(full)
+
+# Example 4
+greeting = "Good"
+time = "Morning"
+message = greeting + " " + time
+print(message)
+
+# Example 5
+city = "New"
+country = "York"
+location = city + " " + country
+print(location)
+
+
+
+name = "Alice"
+age = 25
+txt = f"My name is {name}, I am {age} years old"
+print(txt)
+
+price = 49.99
+txt = f"The total price is {price:.2f} dollars"
+print(txt)
+
+quantity = 5
+cost = 20
+txt = f"The total cost for {quantity} items is {quantity * cost} dollars"
+print(txt)
+
+name = "Bob"
+score = 92.4567
+txt = f"{name} scored {score:.1f} points in the test"
+print(txt)
+
+length = 5
+width = 3
+txt = f"The area of the rectangle is {length * width} square units"
+print(txt)
+name = "Alice"
+age = 25
+txt = f"My name is {name}, I am {age} years old"
+print(txt)
+
+price = 49.99
+txt = f"The total price is {price:.2f} dollars"
+print(txt)
+
+quantity = 5
+cost = 20
+txt = f"The total cost for {quantity} items is {quantity * cost} dollars"
+print(txt)
+
+name = "Bob"
+score = 92.4567
+txt = f"{name} scored {score:.1f} points in the test"
+print(txt)
+
+length = 5
+width = 3
+txt = f"The area of the rectangle is {length * width} square units"
+print(txt)
+
+
+
+txt1 = "She said, \"Hello!\""
+print(txt1)
+
+txt2 = "This is a backslash: \\"
+print(txt2)
+
+txt3 = "First line\nSecond line"
+print(txt3)
+
+txt4 = "Tab\tseparated\tvalues"
+print(txt4)
+
+txt5 = "I\'m learning Python"
+print(txt5)
+
+
+
 
