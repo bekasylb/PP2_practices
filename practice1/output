@@ -1,1 +1,11 @@
+print("Hello", end=" ")
+print("world", end=" ")
+print("this", end=" ")
+print("is", end=" ")
+print("Python")
 
+print(2 + 3)     # addition
+print(10 - 4)    # subtraction
+print(6 * 7)     # multiplication
+print(20 / 5)    # division
+print(5)
