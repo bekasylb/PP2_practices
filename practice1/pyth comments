@@ -1,1 +1,18 @@
+# Print a number
+print(10)
+
+# Add two numbers and print the result
+print(5 + 3)
+
+# Store age in a variable
+age = 16
+print(age)
+
+# Calculate total price
+price = 100
+quantity = 3
+print(price * quantity)
+
+# Print a text message
+print("Hello, world!")
 
