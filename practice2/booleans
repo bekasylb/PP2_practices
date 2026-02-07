@@ -1,1 +1,18 @@
+print(5==5)
+print(5>6)
 
+a = 25
+b = 5
+if a>b:
+    print("a greater")
+elif b>a:
+    print("b is greater")
+
+print(bool("PP2"))
+print(bool(234))
+
+a = "PP2"
+b = 234
+
+print(bool(a))
+print(bool(b))
