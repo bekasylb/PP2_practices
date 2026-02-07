@@ -18,3 +18,210 @@ m = 50 + 25
 n = m + 100
 k = n + n
 
+
+
+
+x = 18
+y = 6
+print(x + y)
+print(x - y)
+print(x * y)
+print(x / y)
+print(x % y)
+print(x ** y)
+print(x // y)
+
+a = 25
+b = 4
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+print(a ** b)
+print(a // b)
+
+m = 30
+n = 7
+print(m + n)
+print(m - n)
+print(m * n)
+print(m / n)
+print(m % n)
+print(m ** n)
+print(m // n)
+
+p = 14
+q = 5
+print(p + q)
+print(p - q)
+print(p * q)
+print(p / q)
+print(p % q)
+print(p ** q)
+print(p // q)
+
+k = 9
+t = 3
+print(k + t)
+print(k - t)
+print(k * t)
+print(k / t)
+print(k % t)
+print(k ** t)
+print(k // t)
+
+
+
+
+numbers1 = [10, 20, 30, 40]
+if (count1 := len(numbers1)) > 3:
+    print(f"List1 has {count1} elements")
+
+numbers2 = [1, 2]
+if (count2 := len(numbers2)) > 1:
+    print(f"List2 has {count2} elements")
+
+numbers3 = [5, 6, 7, 8, 9]
+if (count3 := len(numbers3)) > 4:
+    print(f"List3 has {count3} elements")
+
+numbers4 = [100, 200, 300]
+if (count4 := len(numbers4)) == 3:
+    print(f"List4 has {count4} elements")
+
+numbers5 = [7, 8, 9, 10, 11, 12]
+if (count5 := len(numbers5)) >= 5:
+    print(f"List5 has {count5} elements")
+
+
+
+
+
+
+x = int(input())
+y = int(input())
+
+print(x == y)
+print(x != y)
+print(x > y)
+print(x < y)
+print(x >= y)
+print(x <= y)
+
+
+x = int(input())
+print(1 <= x <= 10)
+print(1 <= x and x <= 10)
+
+a = True
+b = False
+if a and b:
+    print("Both are True")
+
+x = 5
+y = 10
+if x < 3 or y > 8:
+    print("Condition is True")
+
+flag = False
+if not flag:
+    print("Flag is False")
+
+num = 7
+if num > 0 and num < 10:
+    print("Number is between 1 and 9")
+
+val1 = True
+val2 = False
+if not val1 or val2:
+    print("At least one is False")
+
+
+
+
+a = 10
+b = 10
+if a is b:
+    print("a is b")
+
+x = [1, 2, 3]
+y = [1, 2, 3]
+if x is not y:
+    print("x is not y")
+
+flag1 = True
+flag2 = True
+if flag1 is flag2:
+    print("flag1 is flag2")
+
+name1 = "Alice"
+name2 = "Bob"
+if name1 is not name2:
+    print("name1 is not name2")
+
+num1 = None
+num2 = 0
+if num1 is not num2:
+    print("num1 is not num2")
+
+
+
+
+fruits = ["apple", "banana", "cherry"]
+if "apple" in fruits:
+    print("Apple is in the list")
+
+numbers = [1, 2, 3, 4, 5]
+if 6 not in numbers:
+    print("6 is not in the list")
+
+letters = ["a", "b", "c"]
+if "d" not in letters:
+    print("d is not in letters")
+
+colors = ["red", "green", "blue"]
+if "green" in colors:
+    print("Green is in colors")
+
+names = ["Alice", "Bob", "Charlie"]
+if "Eve" not in names:
+    print("Eve is not in names")
+
+
+a = 5
+b = 3
+print(a & b)
+
+x = 5
+y = 3
+print(x | y)
+
+m = 5
+n = 3
+print(m ^ n)
+
+num = 5
+print(~num)
+
+val = 2
+print(val << 2)
+print(val >> 1)
+
+
+
+a = 2 + 3 * 4
+print(a)
+
+b = (2 + 3) * 4
+print(b)
+
+c = 10 - 4 / 2
+print(c)
+
+d = (10 - 4) / 2
+print(d)
+
+e = 2 + 3 ** 2 * 2
+print(e)
+
