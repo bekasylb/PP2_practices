@@ -1,1 +1,137 @@
+fruits = ("apple", "banana", "cherry")
+print(fruits[0])
+
+numbers = (1, 2, 3, 4, 5)
+print(numbers[-1])
+
+colors = ("red", "green", "blue")
+print(len(colors))
+
+mixed = (1, "apple", True)
+print(mixed[1])
+
+letters = ("a", "b", "c")
+print(letters[:2])
+
+
+fruits = ("apple", "banana", "cherry")
+print(fruits[0])
+print(fruits[2])
+
+numbers = (10, 20, 30, 40)
+print(numbers[1])
+print(numbers[-1])
+
+colors = ("red", "green", "blue", "yellow")
+print(colors[2])
+
+
+fruits = ("apple", "banana", "cherry")
+fruits = ("orange",) + fruits[1:]
+print(fruits)
+
+numbers = (1, 2, 3)
+numbers = numbers + (4,)
+print(numbers)
+
+colors = ("red", "green", "blue")
+temp = list(colors)
+temp[1] = "yellow"
+colors = tuple(temp)
+print(colors)
+
+letters = ("a", "b", "c")
+letters = letters[:2] + ("x",)
+print(letters)
+
+mixed = (1, "apple", True)
+mixed = (mixed[0], "banana", mixed[2])
+print(mixed)
+
+
+
+
+fruits = ("apple", "banana", "cherry")
+a, b, c = fruits
+print(a)
+print(b)
+print(c)
+
+numbers = (1, 2, 3, 4)
+w, x, y, z = numbers
+print(w)
+print(x)
+print(y)
+print(z)
+
+colors = ("red", "green", "blue")
+r, g, b = colors
+print(r)
+print(g)
+print(b)
+
+letters = ("a", "b", "c", "d")
+first, second, *rest = letters
+print(first)
+print(second)
+print(rest)
+
+mixed = (1, "apple", True)
+num, fruit, flag = mixed
+print(num)
+print(fruit)
+print(flag)
+
+
+
+fruits = ("apple", "banana", "cherry")
+for fruit in fruits:
+    print(fruit)
+
+numbers = (1, 2, 3, 4)
+for num in numbers:
+    print(num)
+
+colors = ("red", "green", "blue")
+for i in range(len(colors)):
+    print(colors[i])
+
+letters = ("a", "b", "c", "d")
+for index, letter in enumerate(letters):
+    print(index, letter)
+
+mixed = (1, "apple", True)
+for item in mixed:
+    print(item)
+
+
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+joined1 = tuple1 + tuple2
+print(joined1)
+
+fruits1 = ("apple", "banana")
+fruits2 = ("cherry", "orange")
+joined2 = fruits1 + fruits2
+print(joined2)
+
+letters1 = ("a", "b")
+letters2 = ("c", "d")
+joined3 = letters1 + letters2
+print(joined3)
+
+numbers1 = (10, 20)
+numbers2 = (30, 40)
+numbers3 = (50, 60)
+joined4 = numbers1 + numbers2 + numbers3
+print(joined4)
+
+words1 = ("hello",)
+words2 = ("world",)
+joined5 = words1 + words2
+print(joined5)
+
+
+
+
 
