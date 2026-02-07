@@ -1,1 +1,92 @@
+dict1 = {"name": "Alice" "age": 25"}
+dict2 = dict(name="Bob" age=30)
+dict3 = {"city": "New York" "country": "USA"}
+dict4 = dict(a=1 b=2 c=3)
+dict5 = {"x": 10 "y": 20 "z": 30"}
+
+person = {"name": "Alice" "age": 25"}
+print(person["name"])
+print(person.get("age"))
+colors = {"red": "#FF0000" "green": "#00FF00"}
+print(colors["green"])
+numbers = {"one": 1 "two": 2 "three": 3}
+print(numbers.get("three"))
+info = {"city": "Paris" "country": "France"}
+print(info["city"])
+
+person["age"] = 26
+print(person)
+colors["red"] = "#F00"
+print(colors)
+numbers["two"] = 22
+print(numbers)
+info.update({"country": "Germany"})
+print(info)
+dict1["name"] = "Bob"
+print(dict1)
+
+person["gender"] = "female"
+print(person)
+colors["blue"] = "#0000FF"
+print(colors)
+numbers["four"] = 4
+print(numbers)
+info["population"] = 2148327
+print(info)
+dict1["city"] = "London"
+print(dict1)
+
+person.pop("gender")
+print(person)
+colors.popitem()
+print(colors)
+numbers.pop("four")
+print(numbers)
+del info["population"]
+print(info)
+dict1.clear()
+print(dict1)
+
+person = {"name": "Alice" "age": 25"}
+for key in person:
+    print(key person[key])
+colors = {"red": "#FF0000" "green": "#00FF00"}
+for key value in colors.items():
+    print(key value)
+numbers = {"one": 1 "two": 2 "three": 3}
+for value in numbers.values():
+    print(value)
+info = {"city": "Paris" "country": "France"}
+for key in info.keys():
+    print(key)
+dict1 = {"x": 10 "y": 20"}
+for key value in dict1.items():
+    print(key value)
+
+person = {"name": "Alice" "age": 25"}
+copy1 = person.copy()
+print(copy1)
+colors = {"red": "#FF0000" "green": "#00FF00"}
+copy2 = dict(colors)
+print(copy2)
+numbers = {"one": 1 "two": 2"}
+copy3 = numbers.copy()
+print(copy3)
+info = {"city": "Paris" "country": "France"}
+copy4 = dict(info)
+print(copy4)
+dict1 = {"x": 10 "y": 20"}
+copy5 = dict1.copy()
+print(copy5)
+
+family = {"child1": {"name": "Emily" "age": 5} "child2": {"name": "James" "age": 8}}
+print(family["child1"]["name"])
+school = {"class1": {"teacher": "Mrs. Smith" "students": 20} "class2": {"teacher": "Mr. Lee" "students": 25}}
+print(school["class2"]["students"])
+company = {"dept1": {"manager": "Alice" "employees": 10} "dept2": {"manager": "Bob" "employees": 15}}
+print(company["dept1"]["manager"])
+countries = {"USA": {"capital": "Washington"} "France": {"capital": "Paris"}}
+print(countries["France"]["capital"])
+projects = {"proj1": {"status": "ongoing"} "proj2": {"status": "completed"}}
+print(projects["proj2"]["status"])
 
