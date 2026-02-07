@@ -1,1 +1,45 @@
+x = 1
+match x:
+    case 0:
+        print("Zero")
+    case 1:
+        print("One")
+    case _:
+        print("Other")
+
+y = "apple"
+match y:
+    case "banana":
+        print("Banana")
+    case "apple":
+        print("Apple")
+    case _:
+        print("Other fruit")
+
+num = 10
+match num:
+    case n if n > 0:
+        print("Positive")
+    case n if n < 0:
+        print("Negative")
+    case _:
+        print("Zero")
+
+val = (2, 3)
+match val:
+    case (1, 1):
+        print("Tuple 1 1")
+    case (2, 3):
+        print("Tuple 2 3")
+    case _:
+        print("Other tuple")
+
+item = {"type": "fruit", "name": "apple"}
+match item:
+    case {"type": "fruit", "name": name}:
+        print(f"Fruit {name}")
+    case {"type": "vegetable", "name": name}:
+        print(f"Vegetable {name}")
+    case _:
+        print("Other item")
 
