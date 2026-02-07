@@ -1,1 +1,89 @@
+x = 10
+if x > 10:
+    print("x > 10")
+elif x == 10:
+    print("x == 10")
+else:
+    print("x < 10")
+
+y = 5
+if y > 0:
+    print("positive")
+elif y == 0:
+    print("zero")
+else:
+    print("negative")
+
+a = 7
+if a % 2 == 0:
+    print("even")
+else:
+    print("odd")
+
+b = 20
+if b < 10:
+    print("small")
+elif b < 30:
+    print("medium")
+else:
+    print("large")
+
+c = 15
+print("greater than 10") if c > 10 else print("10 or less")
+
+x = 5
+y = 10
+if x > 0 and y > 5:
+    print("Both true")
+if x > 0 or y < 5:
+    print("At least one true")
+flag = True
+if not flag:
+    print("False")
+a = 4
+b = 8
+if a < 5 and b > 5:
+    print("Condition met")
+c = 0
+d = 1
+if not c or d:
+    print("Logic works")
+
+x = 10
+if x > 0:
+    if x % 2 == 0:
+        print("Positive even")
+    else:
+        print("Positive odd")
+y = -5
+if y < 0:
+    if y % 2 == 0:
+        print("Negative even")
+    else:
+        print("Negative odd")
+a = 7
+if a > 0:
+    if a < 10:
+        print("Single digit")
+b = 20
+if b > 0:
+    if b % 2 == 0:
+        print("Positive even")
+c = 0
+if c >= 0:
+    if c == 0:
+        print("Zero")
+
+x = 10
+if x > 0:
+    pass
+y = -5
+if y < 0:
+    pass
+for i in range(5):
+    pass
+def func():
+    pass
+while x > 0:
+    pass
 
