@@ -1,1 +1,247 @@
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])
+print(fruits[-1])
+
+numbers = [1, 2, 3, 4, 5]
+numbers.append(6)
+print(numbers)
+
+colors = ["red", "green", "blue"]
+colors.remove("green")
+print(colors)
+
+letters = ["a", "b", "c"]
+letters.insert(1, "x")
+print(letters)
+
+mixed = [1, "apple", True]
+print(mixed[1])
+
+
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])
+print(fruits[2])
+
+numbers = [10, 20, 30, 40]
+print(numbers[1])
+print(numbers[-1])
+
+colors = ["red", "green", "blue", "yellow"]
+print(colors[2])
+
+
+
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "orange"
+print(fruits)
+
+numbers = [1, 2, 3, 4]
+numbers[0] = 10
+print(numbers)
+
+colors = ["red", "green", "blue"]
+colors[2] = "yellow"
+print(colors)
+
+letters = ["a", "b", "c", "d"]
+letters[1:3] = ["x", "y"]
+print(letters)
+
+mixed = [1, 2, 3, 4, 5]
+mixed[2:5] = [8, 9, 10]
+print(mixed)
+
+
+
+
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)
+
+numbers = [1, 2, 3]
+numbers.append(4)
+print(numbers)
+
+colors = ["red", "green"]
+colors.insert(1, "blue")
+print(colors)
+
+letters = ["a", "b", "c"]
+letters.extend(["x", "y"])
+print(letters)
+
+mixed = [1, 2]
+mixed += [3, 4, 5]
+print(mixed)
+
+
+
+
+fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
+print(fruits)
+
+numbers = [1, 2, 3, 4]
+numbers.pop(2)
+print(numbers)
+
+colors = ["red", "green", "blue"]
+del colors[1]
+print(colors)
+
+letters = ["a", "b", "c", "d"]
+letters.pop()
+print(letters)
+
+mixed = [1, 2, 3, 4, 5]
+del mixed[1:4]
+print(mixed)
+
+
+
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+numbers = [1, 2, 3, 4]
+for num in numbers:
+    print(num)
+
+colors = ["red", "green", "blue"]
+for i in range(len(colors)):
+    print(colors[i])
+
+letters = ["a", "b", "c"]
+for index, letter in enumerate(letters):
+    print(index, letter)
+
+mixed = [1, "apple", True]
+for item in mixed:
+    print(item)
+
+
+
+
+
+numbers = [1, 2, 3, 4, 5]
+squares = [x**2 for x in numbers]
+print(squares)
+
+fruits = ["apple", "banana", "cherry"]
+upper_fruits = [f.upper() for f in fruits]
+print(upper_fruits)
+
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = [x for x in numbers if x % 2 == 0]
+print(even_numbers)
+
+words = ["hello", "world", "python"]
+lengths = [len(w) for w in words]
+print(lengths)
+
+numbers = [1, 2, 3]
+doubled = [x*2 for x in numbers]
+print(doubled)
+
+
+
+
+numbers = [5, 2, 9, 1]
+numbers.sort()
+print(numbers)
+
+fruits = ["banana", "apple", "cherry"]
+fruits.sort()
+print(fruits)
+
+numbers = [3, 1, 4, 2]
+sorted_numbers = sorted(numbers)
+print(sorted_numbers)
+
+letters = ["d", "a", "c", "b"]
+letters.sort(reverse=True)
+print(letters)
+
+words = ["python", "java", "c++", "ruby"]
+words_sorted = sorted(words, key=len)
+print(words_sorted)
+
+
+
+
+fruits = ["apple", "banana", "cherry"]
+copy1 = fruits.copy()
+print(copy1)
+
+numbers = [1, 2, 3, 4]
+copy2 = numbers[:]
+print(copy2)
+
+colors = ["red", "green", "blue"]
+copy3 = list(colors)
+print(copy3)
+
+letters = ["a", "b", "c"]
+copy4 = [x for x in letters]
+print(copy4)
+
+mixed = [1, "apple", True]
+copy5 = mixed.copy()
+print(copy5)
+
+
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+joined1 = list1 + list2
+print(joined1)
+
+fruits1 = ["apple", "banana"]
+fruits2 = ["cherry", "orange"]
+fruits1.extend(fruits2)
+print(fruits1)
+
+letters1 = ["a", "b"]
+letters2 = ["c", "d"]
+joined2 = [*letters1, *letters2]
+print(joined2)
+
+numbers1 = [10, 20]
+numbers2 = [30, 40]
+numbers3 = [50, 60]
+joined3 = numbers1 + numbers2 + numbers3
+print(joined3)
+
+words1 = ["hello"]
+words2 = ["world"]
+joined_words = words1 + words2
+print(joined_words)
+
+
+
+
+
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+print(fruits)
+
+numbers = [1, 2, 3]
+numbers.insert(1, 5)
+print(numbers)
+
+colors = ["red", "green", "blue"]
+colors.remove("green")
+print(colors)
+
+letters = ["a", "b", "c", "d"]
+letters.pop()
+print(letters)
+
+mixed = [1, 2, 3, 4, 5]
+mixed.reverse()
+print(mixed)
+
+
+
+
 
