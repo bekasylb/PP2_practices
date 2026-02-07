@@ -1,1 +1,150 @@
+fruits = {"apple", "banana", "cherry"}
+print(fruits)
+
+numbers = {1, 2, 3, 4, 5}
+print(numbers)
+
+colors = {"red", "green", "blue"}
+print("red" in colors)
+
+letters = {"a", "b", "c"}
+letters.add("d")
+print(letters)
+
+mixed = {1, "apple", True}
+print(mixed)
+
+
+
+fruits = {"apple", "banana", "cherry"}
+for fruit in fruits:
+    print(fruit)
+
+numbers = {1, 2, 3, 4, 5}
+for num in numbers:
+    print(num)
+
+colors = {"red", "green", "blue"}
+for color in colors:
+    print(color)
+
+letters = {"a", "b", "c", "d"}
+for letter in letters:
+    print(letter)
+
+mixed = {1, "apple", True}
+for item in mixed:
+    print(item)
+
+
+
+fruits = {"apple", "banana"}
+fruits.add("cherry")
+print(fruits)
+
+numbers = {1, 2, 3}
+numbers.add(4)
+print(numbers)
+
+colors = {"red", "green"}
+colors.add("blue")
+print(colors)
+
+letters = {"a", "b", "c"}
+letters.add("d")
+print(letters)
+
+mixed = {1, "apple", True}
+mixed.add(False)
+print(mixed)
+
+
+
+
+fruits = {"apple", "banana", "cherry"}
+fruits.remove("banana")
+print(fruits)
+
+numbers = {1, 2, 3, 4}
+numbers.discard(3)
+print(numbers)
+
+colors = {"red", "green", "blue"}
+colors.pop()
+print(colors)
+
+letters = {"a", "b", "c", "d"}
+letters.discard("x")
+print(letters)
+
+mixed = {1, "apple", True, False}
+mixed.remove(True)
+print(mixed)
+
+
+
+fruits = {"apple", "banana", "cherry"}
+for fruit in fruits:
+    print(fruit)
+
+numbers = {1, 2, 3, 4, 5}
+for num in numbers:
+    print(num)
+
+colors = {"red", "green", "blue"}
+for color in colors:
+    print(color)
+
+letters = {"a", "b", "c", "d"}
+for letter in letters:
+    print(letter)
+
+mixed = {1, "apple", True}
+for item in mixed:
+    print(item)
+
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+joined1 = set1.union(set2)
+print(joined1)
+
+fruits1 = {"apple", "banana"}
+fruits2 = {"cherry", "orange"}
+joined2 = fruits1.union(fruits2)
+print(joined2)
+
+letters1 = {"a", "b"}
+letters2 = {"c", "d"}
+joined3 = letters1 | letters2
+print(joined3)
+
+numbers1 = {10, 20}
+numbers2 = {30, 40}
+numbers3 = {50, 60}
+joined4 = numbers1.union(numbers2, numbers3)
+print(joined4)
+
+words1 = {"hello"}
+words2 = {"world"}
+joined5 = words1 | words2
+print(joined5)
+
+
+
+fruits = frozenset(["apple", "banana", "cherry"])
+print(fruits)
+
+numbers = frozenset([1, 2, 3, 4])
+print(numbers)
+
+colors = frozenset(["red", "green", "blue"])
+print("red" in colors)
+
+letters = frozenset(["a", "b", "c"])
+for letter in letters:
+    print(letter)
+
+mixed = frozenset([1, "apple", True])
+print(mixed)
 
