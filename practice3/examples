@@ -1,0 +1,206 @@
+#Python Functions
+
+def add(a, b):
+    return a + b
+
+def find_max(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+def is_even(n):
+    return n % 2 == 0
+
+def greet(name):
+    return "Hello, " + name + "!"
+
+print(add(5, 3))
+print(find_max(10, 7))
+print(is_even(4))
+print(greet("Bekasyl"))
+
+#Python Function Arguments
+def add(a, b):
+    return a + b
+
+def greet(name="Guest"):
+    return "Hello, " + name
+
+def total(*numbers):
+    return sum(numbers)
+
+def show_info(name, age):
+    return f"{name} is {age} years old"
+
+print(add(3, 5))
+print(greet())
+print(greet("Bekasyl"))
+print(total(1, 2, 3, 4))
+print(show_info(age=16, name="Ali"))
+
+
+#Python *args an **kwargs
+def numbers_sum(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+def show_info(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
+
+def example(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+print(numbers_sum(1, 2, 3))
+show_info(name="Ali", age=16, city="Almaty")
+example(5, 10, 15, name="Bekasyl", age=17)
+
+
+
+#Python Scope
+x = 10
+
+def local_scope():
+    x = 5
+    print("Local x:", x)
+
+def global_scope():
+    global x
+    x = 20
+    print("Changed global x:", x)
+
+def outer():
+    y = 30
+    def inner():
+        nonlocal y
+        y = 40
+        print("Inner y:", y)
+    inner()
+    print("Outer y:", y)
+
+print("Global x:", x)
+local_scope()
+print("Global x after local:", x)
+global_scope()
+print("Global x after global:", x)
+outer()
+
+
+#Python Decorators
+def my_decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+
+
+def repeat(times):
+    def decorator(func):
+        def wrapper():
+            for _ in range(times):
+                func()
+        return wrapper
+    return decorator
+
+@repeat(3)
+def greet():
+    print("Hi!")
+
+greet()
+
+
+
+
+#Python Lambda
+add = lambda a, b: a + b
+print(add(3, 5))
+
+square = lambda x: x ** 2
+print(square(4))
+
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x ** 2, numbers))
+print(squares)
+
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)
+
+
+#Python Recursion
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+def sum_list(lst):
+    if not lst:
+        return 0
+    else:
+        return lst[0] + sum_list(lst[1:])
+
+def countdown(n):
+    if n <= 0:
+        print("Done!")
+    else:
+        print(n)
+        countdown(n-1)
+
+print(factorial(5))
+print(fibonacci(7))
+print(sum_list([1 2 3 4 5]))
+countdown(5)
+
+
+#Python Generators
+# Генератор для чисел от 1 до n
+def numbers(n):
+    i = 1
+    while i <= n:
+        yield i
+        i += 1
+
+for num in numbers(5):
+    print(num)
+
+# Генератор для квадратов чисел
+def squares(n):
+    for i in range(1, n+1):
+        yield i * i
+
+for sq in squares(5):
+    print(sq)
+
+# Генератор бесконечной последовательности Фибоначчи
+def fibonacci():
+    a = 0
+    b = 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+fib_gen = fibonacci()
+for _ in range(7):
+    print(next(fib_gen))
+
+
+
