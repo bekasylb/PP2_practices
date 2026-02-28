@@ -1,1 +1,27 @@
+from datetime import datetime, timedelta
 
+# Task 1: Subtract 5 days from current date
+now = datetime.now()
+five_days_ago = now - timedelta(days=5)
+
+# Task 2: Yesterday, Today, Tomorrow
+today = now.date()
+yesterday = today - timedelta(days=1)
+tomorrow = today + timedelta(days=1)
+
+# Task 3: Remove microseconds from datetime
+without_microseconds = now.replace(microsecond=0)
+
+# Task 4: Difference between two dates in seconds
+date1 = datetime(2026, 2, 28, 12, 0, 0)
+date2 = datetime(2026, 3, 1, 14, 30, 0)
+diff_seconds = (date2 - date1).total_seconds()
+
+# Print all results
+print("Current date:", now)
+print("Date 5 days ago:", five_days_ago)
+print("Yesterday:", yesterday)
+print("Today:", today)
+print("Tomorrow:", tomorrow)
+print("Datetime without microseconds:", without_microseconds)
+print("Time difference in seconds:", diff_seconds)
