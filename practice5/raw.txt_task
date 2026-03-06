@@ -1,1 +1,53 @@
+import re
+import json
 
+with open("raw.txt", "r", encoding="utf-8") as f:
+    text = f.read()
+
+
+#Extract prices
+price_pattern = r"\d[\d\s]*,\d{2}"
+prices = re.findall(price_pattern, text)
+
+prices = [p.replace(" ", "").replace(",", ".") for p in prices]
+
+
+#Extract product names
+product_pattern = r"\d+\.\n(.+)"
+products = re.findall(product_pattern, text)
+
+
+#Extract total
+total_pattern = r"ИТОГО:\n([\d\s]+,\d{2})"
+total_match = re.search(total_pattern, text)
+
+total = None
+if total_match:
+    total = total_match.group(1).replace(" ", "").replace(",", ".")
+
+
+#Extract date and time
+datetime_pattern = r"Время:\s*(\d{2}\.\d{2}\.\d{4}\s*\d{2}:\d{2}:\d{2})"
+datetime_match = re.search(datetime_pattern, text)
+
+datetime = datetime_match.group(1) if datetime_match else None
+
+
+#Extract payment method
+payment_pattern = r"(Банковская карта)"
+payment_match = re.search(payment_pattern, text)
+
+payment_method = payment_match.group(1) if payment_match else None
+
+
+#structured output
+data = {
+    "products": products,
+    "prices": prices,
+    "total": total,
+    "datetime": datetime,
+    "payment_method": payment_method
+}
+
+
+print(json.dumps(data, indent=4, ensure_ascii=False))
