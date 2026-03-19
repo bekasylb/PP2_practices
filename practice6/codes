@@ -1,0 +1,109 @@
+import os
+import shutil
+from functools import reduce
+
+print("=== FILE HANDLING ===")
+
+# 1. Create and write file
+with open("sample.txt", "w") as f:
+    f.write("Hello, this is the first line.\n")
+    f.write("This is the second line.\n")
+
+# 2. Read file
+print("\nReading file:")
+with open("sample.txt", "r") as f:
+    print(f.read())
+
+# 3. Append data
+with open("sample.txt", "a") as f:
+    f.write("This is an appended line.\n")
+
+print("After appending:")
+with open("sample.txt", "r") as f:
+    print(f.read())
+
+# 4. Copy file
+shutil.copy("sample.txt", "backup_sample.txt")
+print("File copied to backup_sample.txt")
+
+# 5. Delete file safely
+if os.path.exists("backup_sample.txt"):
+    os.remove("backup_sample.txt")
+    print("backup_sample.txt deleted")
+
+print("\n=== DIRECTORY OPERATIONS ===")
+
+# 6. Create nested directories
+os.makedirs("folder/subfolder", exist_ok=True)
+print("Directories created")
+
+# 7. List files
+print("\nFiles in current directory:")
+print(os.listdir("."))
+
+# 8. Find .txt files
+print("\nTXT files:")
+for file in os.listdir("."):
+    if file.endswith(".txt"):
+        print(file)
+
+# 9. Move and copy files
+shutil.move("sample.txt", "folder/sample.txt")
+print("sample.txt moved to folder/")
+
+shutil.copy("folder/sample.txt", "sample_copy.txt")
+print("Copied back as sample_copy.txt")
+
+print("\n=== BUILT-IN FUNCTIONS ===")
+
+# 10. map()
+nums = [1, 2, 3, 4]
+squared = list(map(lambda x: x**2, nums))
+print("Squared:", squared)
+
+# 11. filter()
+nums2 = [1, 2, 3, 4, 5, 6]
+evens = list(filter(lambda x: x % 2 == 0, nums2))
+print("Evens:", evens)
+
+# 12. reduce()
+total = reduce(lambda x, y: x + y, nums)
+print("Sum:", total)
+
+# 13. enumerate()
+fruits = ["apple", "banana", "cherry"]
+print("\nEnumerate:")
+for i, fruit in enumerate(fruits):
+    print(i, fruit)
+
+# 14. zip()
+names = ["Ali", "Bob", "Charlie"]
+scores = [85, 90, 78]
+print("\nZip:")
+for name, score in zip(names, scores):
+    print(name, score)
+
+# 15. Type checking and conversion
+x = "123"
+print("\nType before:", type(x))
+num = int(x)
+print("Type after:", type(num))
+
+print("\n=== MINI TASK ===")
+
+# Create file with numbers
+with open("numbers.txt", "w") as f:
+    f.write("1 2 3 4 5")
+
+# Read numbers
+with open("numbers.txt", "r") as f:
+    numbers = list(map(int, f.read().split()))
+
+# Square numbers
+squared_numbers = list(map(lambda x: x**2, numbers))
+
+# Save result
+with open("squared_numbers.txt", "w") as f:
+    f.write(" ".join(map(str, squared_numbers)))
+
+print("Squared numbers saved to squared_numbers.txt")
