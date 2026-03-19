@@ -2,7 +2,7 @@ import os
 import shutil
 from functools import reduce
 
-print("=== FILE HANDLING ===")
+print("   FILE HANDLING    ")
 
 # 1. Create and write file
 with open("sample.txt", "w") as f:
