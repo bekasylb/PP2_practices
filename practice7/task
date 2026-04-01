@@ -1,1 +1,92 @@
+import psycopg2
+import csv
 
+conn = psycopg2.connect(
+    dbname="phonebook_db",
+    user="postgres",
+    password="1234",
+    host="localhost",
+    port="5432"
+)
+
+cur = conn.cursor()
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS phonebook (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    phone VARCHAR(20)
+)
+""")
+conn.commit()
+
+while True:
+    print("\n1 - Add contact")
+    print("2 - Load from CSV")
+    print("3 - Show all")
+    print("4 - Search")
+    print("5 - Update")
+    print("6 - Delete")
+    print("0 - Exit")
+
+    choice = input("Choose: ")
+
+    if choice == "1":
+        name = input("Name: ")
+        phone = input("Phone: ")
+        cur.execute("INSERT INTO phonebook (name, phone) VALUES (%s, %s)", (name, phone))
+        conn.commit()
+
+    elif choice == "2":
+        file = input("CSV file: ")
+        with open(file, "r") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                cur.execute("INSERT INTO phonebook (name, phone) VALUES (%s, %s)", (row[0], row[1]))
+        conn.commit()
+
+    elif choice == "3":
+        cur.execute("SELECT * FROM phonebook")
+        for r in cur.fetchall():
+            print(r)
+
+    elif choice == "4":
+        name = input("Name: ")
+        phone = input("Phone prefix: ")
+
+        if name:
+            cur.execute("SELECT * FROM phonebook WHERE name ILIKE %s", ('%' + name + '%',))
+        elif phone:
+            cur.execute("SELECT * FROM phonebook WHERE phone LIKE %s", (phone + '%',))
+
+        for r in cur.fetchall():
+            print(r)
+
+    elif choice == "5":
+        old = input("Old name: ")
+        new_name = input("New name: ")
+        new_phone = input("New phone: ")
+
+        if new_name:
+            cur.execute("UPDATE phonebook SET name=%s WHERE name=%s", (new_name, old))
+        if new_phone:
+            cur.execute("UPDATE phonebook SET phone=%s WHERE name=%s", (new_phone, old))
+
+        conn.commit()
+
+    elif choice == "6":
+        name = input("Delete name: ")
+        phone = input("Delete phone: ")
+
+        if name:
+            cur.execute("DELETE FROM phonebook WHERE name=%s", (name,))
+        elif phone:
+            cur.execute("DELETE FROM phonebook WHERE phone=%s", (phone,))
+
+        conn.commit()
+
+    elif choice == "0":
+        break
+
+cur.close()
+conn.close()
