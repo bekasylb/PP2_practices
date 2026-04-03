@@ -1,1 +1,65 @@
+CREATE OR REPLACE FUNCTION search_phonebook(pattern TEXT)
+RETURNS TABLE(id INT, name VARCHAR, phone VARCHAR) AS
+$$
+BEGIN
+    RETURN QUERY
+    SELECT p.id, p.name, p.phone
+    FROM phonebook p
+    WHERE p.name ILIKE '%' || pattern || '%'
+       OR p.phone ILIKE '%' || pattern || '%';
+END;
+$$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE PROCEDURE upsert_user(p_name TEXT, p_phone TEXT)
+AS $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM phonebook WHERE name = p_name) THEN
+        UPDATE phonebook
+        SET phone = p_phone
+        WHERE name = p_name;
+    ELSE
+        INSERT INTO phonebook(name, phone)
+        VALUES (p_name, p_phone);
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE PROCEDURE insert_many_users(names TEXT[], phones TEXT[])
+AS $$
+DECLARE
+    i INT;
+BEGIN
+    FOR i IN 1..array_length(names, 1) LOOP
+        IF phones[i] ~ '^[0-9]+$' THEN
+            CALL upsert_user(names[i], phones[i]);
+        ELSE
+            RAISE NOTICE 'Invalid phone: % for user %', phones[i], names[i];
+        END IF;
+    END LOOP;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION get_phonebook_paginated(limit_val INT, offset_val INT)
+RETURNS TABLE(id INT, name VARCHAR, phone VARCHAR) AS
+$$
+BEGIN
+    RETURN QUERY
+    SELECT * FROM phonebook
+    LIMIT limit_val OFFSET offset_val;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE PROCEDURE delete_user(p_value TEXT)
+AS $$
+BEGIN
+    DELETE FROM phonebook
+    WHERE name = p_value OR phone = p_value;
+END;
+$$ LANGUAGE plpgsql;
+
+CALL upsert_user('Bek', '87771234567');
+SELECT * FROM search_phonebook('Bek');
+CALL insert_many_users(ARRAY['A','B'], ARRAY['12345','abc']);
+SELECT * FROM get_phonebook_paginated(2,0);
+CALL delete_user('Bek');
+SELECT * FROM phonebook;
