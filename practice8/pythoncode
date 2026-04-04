@@ -1,0 +1,104 @@
+import psycopg2
+import csv
+
+conn = psycopg2.connect(
+    dbname="bekasyl",
+    user="postgres",
+    password="1234",
+    host="localhost",
+    port="5432"
+)
+
+cur = conn.cursor()
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS phonebook (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    phone VARCHAR(20)
+)
+""")
+conn.commit()
+
+while True:
+    print("\n1 - Add contact")
+    print("2 - Load from CSV")
+    print("3 - Show all")
+    print("4 - Search")
+    print("5 - Update")
+    print("6 - Delete")
+    print("7 - Add or update via procedure")
+    print("8 - Add many via procedure")
+    print("9 - Paginate")
+    print("0 - Exit")
+
+    choice = input("Choose: ")
+
+    if choice == "1":
+        name = input("Name: ")
+        phone = input("Phone: ")
+        cur.execute("INSERT INTO phonebook (name, phone) VALUES (%s, %s)", (name, phone))
+        conn.commit()
+
+    elif choice == "2":
+        file = input("CSV file: ")
+        with open(file, "r") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                cur.execute("INSERT INTO phonebook (name, phone) VALUES (%s, %s)", (row[0], row[1]))
+        conn.commit()
+
+    elif choice == "3":
+        cur.execute("SELECT * FROM phonebook")
+        for r in cur.fetchall():
+            print(r)
+
+    elif choice == "4":
+        pattern = input("Search pattern: ")
+        cur.execute("SELECT * FROM search_phonebook(%s)", (pattern,))
+        for r in cur.fetchall():
+            print(r)
+
+    elif choice == "5":
+        old = input("Old name: ")
+        new_name = input("New name: ")
+        new_phone = input("New phone: ")
+        if new_name:
+            cur.execute("UPDATE phonebook SET name=%s WHERE name=%s", (new_name, old))
+        if new_phone:
+            cur.execute("UPDATE phonebook SET phone=%s WHERE name=%s", (new_phone, old))
+        conn.commit()
+
+    elif choice == "6":
+        name = input("Delete name: ")
+        phone = input("Delete phone: ")
+        cur.execute("CALL delete_user(%s, %s)", (name if name else None, phone if phone else None))
+        conn.commit()
+
+    elif choice == "7":
+        name = input("Name: ")
+        phone = input("Phone: ")
+        cur.execute("CALL add_or_update_user(%s, %s)", (name, phone))
+        conn.commit()
+
+    elif choice == "8":
+        while True:
+            name = input("Name (empty to stop): ")
+            if not name:
+                break
+            phone = input("Phone: ")
+            cur.execute("CALL add_many_users(ARRAY[%s], ARRAY[%s])", (name, phone))
+        conn.commit()
+
+    elif choice == "9":
+        limit = int(input("Limit: "))
+        offset = int(input("Offset: "))
+        cur.execute("SELECT * FROM get_phonebook_page(%s, %s)", (limit, offset))
+        for r in cur.fetchall():
+            print(r)
+
+    elif choice == "0":
+        break
+
+cur.close()
+conn.close()
