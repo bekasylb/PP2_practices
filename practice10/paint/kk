@@ -1,0 +1,22 @@
+# Paint
+
+A simple paint application made with pygame.
+
+## Features
+- Free drawing
+- Rectangle
+- Circle
+- Eraser
+- Color selection
+
+## Controls
+- 1 = Brush
+- 2 = Rectangle
+- 3 = Circle
+- 4 = Eraser
+- R = Red
+- G = Green
+- B = Blue
+- K = Black
+- C = Clear screen
+- Q = Quit
